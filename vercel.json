@@ -1,6 +1,8 @@
 {
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/flight-discount", "destination": "/index.html" },
+    { "source": "/hotel-discount", "destination": "/index.html" },
+    { "source": "/tips", "destination": "/index.html" }
   ]
 }
