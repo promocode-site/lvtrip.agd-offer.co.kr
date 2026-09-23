@@ -1,0 +1,152 @@
+/* =========================================================
+   블로그 전용 스타일 (blog.css)
+   이 파일 하나만 블로그가 사용합니다. 메인 페이지 CSS와 무관합니다.
+   색·폰트·여백은 아래 :root 변수만 바꾸면 블로그 전체가 바뀝니다.
+   ========================================================= */
+:root {
+  --blog-bg: #ffffff;
+  --blog-text: #191F28;
+  --blog-muted: #8B95A1;
+  --blog-point: #0E86D4;
+  --blog-line: #F2F4F6;
+  --blog-font: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --blog-radius: 16px;
+  --blog-max: 720px;
+  --blog-gutter: 20px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body.blog {
+  margin: 0;
+  background: var(--blog-bg);
+  color: var(--blog-text);
+  font-family: var(--blog-font);
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+body.blog img { max-width: 100%; height: auto; display: block; }
+body.blog a { color: var(--blog-point); text-decoration: none; }
+body.blog a:hover { opacity: 0.75; }
+
+.blog-wrap { max-width: var(--blog-max); margin: 0 auto; padding: 0 var(--blog-gutter); }
+
+/* 헤더 / 푸터 */
+.blog-top { border-bottom: 1px solid var(--blog-line); }
+.blog-top .blog-wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; min-height: 64px;
+}
+.blog-brand {
+  font-size: 17px; font-weight: 700; letter-spacing: -0.02em;
+  color: var(--blog-text);
+}
+.blog-nav { display: flex; gap: 20px; font-size: 15px; font-weight: 500; }
+.blog-nav a { color: var(--blog-muted); }
+.blog-nav a.on { color: var(--blog-text); }
+
+.blog-foot {
+  margin-top: 96px; padding: 32px 0 48px;
+  border-top: 1px solid var(--blog-line);
+  color: var(--blog-muted); font-size: 14px;
+}
+.blog-foot .blog-wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+.blog-foot a { color: var(--blog-muted); }
+
+/* 목록 페이지 */
+.blog-head { padding: 64px 0 40px; }
+.blog-head h1 {
+  margin: 0 0 12px;
+  font-size: 34px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.35;
+}
+.blog-head p { margin: 0; color: var(--blog-muted); font-size: 16px; }
+
+.post-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
+.post-list > li { margin: 0; }
+.post-list a { display: block; color: inherit; }
+.post-list a:hover { opacity: 1; }
+
+.post-card {
+  border: 1px solid var(--blog-line);
+  border-radius: var(--blog-radius);
+  padding: 28px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.post-card:hover {
+  border-color: #E5E8EB;
+  box-shadow: 0 2px 12px rgba(25, 31, 40, 0.04);
+}
+.post-thumb {
+  width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  border-radius: 12px; margin-bottom: 20px; background: var(--blog-line);
+}
+.post-title {
+  margin: 0 0 10px;
+  font-size: 22px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.4;
+}
+.post-desc { margin: 0 0 14px; color: var(--blog-muted); font-size: 16px; }
+.post-date { display: block; color: var(--blog-muted); font-size: 13px; }
+
+/* 글 페이지 */
+.post-article { padding: 56px 0 0; }
+.post-article h1 {
+  margin: 12px 0 16px;
+  font-size: 34px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.35;
+}
+.post-meta { color: var(--blog-muted); font-size: 14px; }
+.post-hero {
+  width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  border-radius: var(--blog-radius); margin: 28px 0 44px;
+}
+
+.post-content p { margin: 0 0 24px; }
+.post-content h2 {
+  margin: 56px 0 16px;
+  font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.4;
+}
+.post-content h3 {
+  margin: 40px 0 12px;
+  font-size: 20px; font-weight: 700; letter-spacing: -0.02em;
+}
+.post-content ul, .post-content ol { margin: 0 0 24px; padding-left: 22px; }
+.post-content li { margin-bottom: 10px; }
+.post-content img { border-radius: var(--blog-radius); margin: 32px 0; }
+.post-content blockquote {
+  margin: 32px 0; padding: 20px 24px;
+  background: var(--blog-line); border-radius: var(--blog-radius);
+  color: var(--blog-text);
+}
+.post-content blockquote p:last-child { margin-bottom: 0; }
+.post-content table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 16px; }
+.post-content th, .post-content td { border-bottom: 1px solid var(--blog-line); padding: 14px 8px; text-align: left; }
+.post-content th { font-weight: 700; }
+.post-content code {
+  background: var(--blog-line); border-radius: 6px; padding: 2px 6px; font-size: 15px;
+}
+
+.post-cta {
+  display: inline-block; margin: 8px 0 0; padding: 15px 28px;
+  background: var(--blog-point); color: #fff;
+  border-radius: 12px; font-weight: 700; font-size: 16px;
+}
+.post-cta:hover { opacity: 0.9; }
+
+.post-related { margin: 72px 0 0; padding: 32px 0 0; border-top: 1px solid var(--blog-line); }
+.post-related h2 { margin: 0 0 16px; font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.post-related ul { list-style: none; margin: 0; padding: 0; }
+.post-related li { margin-bottom: 12px; }
+
+.back-link { display: inline-block; margin: 40px 0 0; font-size: 16px; font-weight: 500; }
+
+@media (max-width: 640px) {
+  .blog-head { padding: 40px 0 28px; }
+  .blog-head h1, .post-article h1 { font-size: 27px; }
+  .post-content h2 { font-size: 22px; margin-top: 44px; }
+  .post-card { padding: 24px 20px; }
+  .post-title { font-size: 20px; }
+  .post-article { padding: 36px 0 0; }
+}

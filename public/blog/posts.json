@@ -1,0 +1,17 @@
+{
+    "site":  "lvtrip.agd-offer.co.kr",
+    "siteName":  "트립닷컴 쿠폰",
+    "baseUrl":  "https://lvtrip.agd-offer.co.kr",
+    "postUrlPattern":  "/blog/{slug}/",
+    "updated":  "2026-09-23",
+    "posts":  [
+                  {
+                      "title":  "블로그를 시작합니다",
+                      "slug":  "blog-start",
+                      "date":  "2026-09-23",
+                      "description":  "lvtrip.agd-offer.co.kr 블로그의 첫 글입니다. 앞으로 할인과 예약 정보를 정리해 올립니다.",
+                      "image":  "/images/blog-sample.svg",
+                      "noindex":  true
+                  }
+              ]
+}
