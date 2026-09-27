@@ -7,9 +7,11 @@ interface SchemaOrgProps {
   url: string;
   faqItems?: { question: string; answer: string }[];
   breadcrumbs?: { name: string; url: string }[];
+  /** 메인 페이지만: WebPage 발행일·수정일·발행처 (src/data/updateLog.ts) */
+  pageDates?: { datePublished: string; dateModified: string };
 }
 
-export default function SchemaOrg({ type, title, description, url, faqItems, breadcrumbs }: SchemaOrgProps) {
+export default function SchemaOrg({ type, title, description, url, faqItems, breadcrumbs, pageDates }: SchemaOrgProps) {
   const baseUrl = "https://lvtrip.agd-offer.co.kr";
 
   const schemas: object[] = [];
@@ -44,6 +46,7 @@ export default function SchemaOrg({ type, title, description, url, faqItems, bre
     },
     datePublished: "2026-01-01",
     dateModified: "2026-09-01",
+    ...pageDates,
     ...(type === "Article" && {
       author: { "@type": "Organization", name: "트립닷컴 쿠폰" },
       headline: title,

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { toast } from "sonner";
 import SchemaOrg from "@/components/SchemaOrg";
 import CouponCard from "@/components/CouponCard";
+import UpdateLog from "@/components/UpdateLog";
+import { pageDates } from "@/data/updateLog";
 
 import heroBanner from "@/assets/hero-banner.png";
 import couponFlight from "@/assets/coupon-1.webp";
@@ -84,6 +86,7 @@ export default function Index() {
         description="9월 트립닷컴 쿠폰 총정리! 트립닷컴 항공권 할인코드부터 호텔 할인코드까지, 지금 바로 쓸 수 있는 트립닷컴 할인쿠폰을 카테고리별로 정리했습니다. 매월 업데이트되는 트립닷컴 할인코드들을 확인해보세요!"
         url="/"
         breadcrumbs={[{ name: "홈", url: "/" }]}
+        pageDates={pageDates}
       />
 
       {/* Hero Section */}
@@ -311,6 +314,9 @@ export default function Index() {
           </a>
         </div>
       </section>
+
+      {/* 업데이트 내역 (본문 맨 끝, 푸터 바로 앞) */}
+      <UpdateLog />
     </>
   );
 }
