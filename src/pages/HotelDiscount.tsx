@@ -6,7 +6,6 @@ import SchemaOrg from "@/components/SchemaOrg";
 import CouponCard from "@/components/CouponCard";
 
 import couponHotel12 from "@/assets/coupon-hotel-12pct.png";
-import couponHotelThailand from "@/assets/coupon-hotel-thailand.png";
 import couponNewmember from "@/assets/coupon-newmember.png";
 import couponLotte from "@/assets/coupon-lotte.png";
 import couponMegasale from "@/assets/coupon-megasale.png";
@@ -38,13 +37,13 @@ function CopyBtn({ code }: { code: string }) {
 
 const hotelCoupons = [
   {
-    code: "VSZZETGULJ", discount: "10% 할인", category: "호텔 (태국)",
-    description: "태국 호텔 10% 할인 인플루언서 코드",
-    expiry: "2026년 9월 30일", image: couponHotelThailand,
-    conditions: ["태국 호텔 한정", "투숙 기간: 2026년 9월 30일까지", "사용 횟수 제한 없음", "KRW 결제 시 사용"],
+    code: "TRIPBH3", discount: "3% 할인", category: "호텔",
+    description: "전 세계 호텔 3% 할인코드 (한도없음)",
+    expiry: "2026년 10월 31일",
+    conditions: ["전 세계 모든 호텔 적용", "투숙 기간: 2026년 10월 31일까지", "할인 한도 없음, 계정당 10회까지 사용 가능", "KRW 결제 시 사용"],
   },
   {
-    code: "1JOEKI", discount: "8% 쿠폰", category: "신규회원",
+    code: "HMNG5D", discount: "8% 쿠폰", category: "신규회원",
     description: "신규회원 추천코드 – 호텔 8% 할인쿠폰 지급",
     expiry: "가입 후 7일", image: couponNewmember,
     conditions: ["앱 설치 후 가입 시 입력", "호텔 8% 할인쿠폰 즉시 지급", "웰컴 쿠폰팩 추가 혜택"],
@@ -52,27 +51,24 @@ const hotelCoupons = [
   {
     code: "TRIPCAR8", discount: "8% 할인", category: "렌터카",
     description: "트립닷컴 렌터카 8% 할인코드",
-    expiry: "2026년 9월 30일", image: couponCar,
+    expiry: "2026년 10월 31일", image: couponCar,
     conditions: ["전 세계 렌터카 적용", "자유여행 필수 아이템"],
   },
   {
     code: "TRIPCAR7", discount: "7% 할인", category: "렌터카",
     description: "트립닷컴 렌터카 7% 할인코드",
-    expiry: "2026년 9월 30일", image: couponCar7,
+    expiry: "2026년 10월 31일", image: couponCar7,
     conditions: ["전 세계 렌터카 적용", "TRIPCAR8 미적용 시 사용"],
   },
   {
-    code: "TOSSH05", discount: "5% 할인", category: "호텔 (토스페이)",
-    description: "토스페이 결제 시 호텔 5% 할인 (최대 6만원)",
-    expiry: "2026년 9월 30일",
+    code: "RVZBEEWRDF", discount: "5% 할인", category: "호텔 (토스페이)",
+    description: "토스페이 결제 시 중국 호텔 5% 할인 (최대 5만원)",
+    expiry: "선착순 마감",
     conditions: [
-      "토스페이 결제 시 호텔 5% 할인",
-      "최대 6만원 할인, 최소 사용 금액 없음",
-      "숙박 기간: 2026년 9월 30일까지",
-      "트립닷컴 계정당 1일 1회 선착순",
-      "전용 링크 유입 후 결제 시 코드 입력",
+      "토스페이 결제 시 중국 호텔 5% 할인",
+      "최대 5만원 할인",
+      "선착순 마감, 소진 시 종료",
     ],
-    link: "http://app.ac/cEMTKrS53",
   },
 ];
 
@@ -81,8 +77,8 @@ export default function HotelDiscount() {
     <>
       <SchemaOrg
         type="Article"
-        title="트립닷컴 호텔 할인코드 2026년 9월 - 최대 12% 할인"
-        description="2026년 9월 최신 트립닷컴 호텔 할인코드 총정리. 인플루언서 10% 할인, 신규회원 8% 쿠폰, 롯데카드 2% 자동 할인, 웰컴 쿠폰팩까지 모든 호텔 할인 정보를 확인하세요."
+        title="트립닷컴 호텔 할인코드 2026년 10월 - 최대 8% 할인"
+        description="2026년 10월 최신 트립닷컴 호텔 할인코드 총정리. 전 세계 호텔 3% 할인코드, 신규회원 8% 쿠폰, 롯데카드 2% 자동 할인, 웰컴 쿠폰팩까지 모든 호텔 할인 정보를 확인하세요."
         url="/hotel-discount"
         breadcrumbs={[
           { name: "홈", url: "/" },
@@ -98,11 +94,11 @@ export default function HotelDiscount() {
         <div className="container relative text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Hotel className="w-8 h-8" />
-            <span className="badge-discount text-sm">2026년 9월 최신</span>
+            <span className="badge-discount text-sm">2026년 10월 최신</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-black mb-4">트립닷컴 호텔 할인코드</h1>
           <p className="text-lg opacity-90 max-w-2xl mx-auto mb-6">
-            인플루언서 할인코드 최대 10%, 신규회원 8% 쿠폰, 카드사 제휴 2% 자동 할인까지. 최저가 호텔을 예약하세요.
+            호텔 할인코드 최대 5%, 신규회원 8% 쿠폰, 카드사 제휴 할인까지. 최저가 호텔을 예약하세요.
           </p>
           <a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-secondary px-8 py-4 font-bold text-secondary-foreground text-lg hover:scale-105 transition-all animate-pulse-glow">
@@ -119,11 +115,12 @@ export default function HotelDiscount() {
           <table>
             <thead><tr><th>카테고리</th><th>할인코드</th><th>할인혜택</th><th>적용 대상</th><th>마감</th></tr></thead>
             <tbody>
-              <tr><td>호텔</td><td><CopyBtn code="VSZZETGULJ" /></td><td className="font-bold text-primary">10% 할인</td><td>태국 호텔 한정</td><td>26/09/30</td></tr>
-              <tr><td>호텔</td><td><CopyBtn code="1JOEKI" /></td><td className="font-bold text-primary">8% 쿠폰 지급</td><td>신규회원</td><td>가입 후 7일</td></tr>
+              <tr><td>호텔</td><td><CopyBtn code="TRIPBH3" /></td><td className="font-bold text-primary">3% 할인</td><td>전 세계 호텔</td><td>26/10/31</td></tr>
+              <tr><td>호텔</td><td><CopyBtn code="HMNG5D" /></td><td className="font-bold text-primary">8% 쿠폰 지급</td><td>신규회원</td><td>가입 후 7일</td></tr>
               <tr><td>호텔</td><td>롯데카드 자동적용</td><td className="font-bold text-primary">2% 자동 할인</td><td>롯데카드 결제</td><td>월별 선착순</td></tr>
-              <tr><td>렌터카</td><td><CopyBtn code="TRIPCAR8" /></td><td className="font-bold text-primary">8% 할인</td><td>전 세계</td><td>26/09/30</td></tr>
-              <tr><td>렌터카</td><td><CopyBtn code="TRIPCAR7" /></td><td className="font-bold text-primary">7% 할인</td><td>전 세계</td><td>26/09/30</td></tr>
+              <tr><td>호텔</td><td><CopyBtn code="RVZBEEWRDF" /></td><td className="font-bold text-primary">5% 할인 (최대 5만원)</td><td>중국 호텔, 토스페이 결제</td><td>선착순 마감</td></tr>
+              <tr><td>렌터카</td><td><CopyBtn code="TRIPCAR8" /></td><td className="font-bold text-primary">8% 할인</td><td>전 세계</td><td>26/10/31</td></tr>
+              <tr><td>렌터카</td><td><CopyBtn code="TRIPCAR7" /></td><td className="font-bold text-primary">7% 할인</td><td>전 세계</td><td>26/10/31</td></tr>
             </tbody>
           </table>
         </div>
@@ -174,9 +171,9 @@ export default function HotelDiscount() {
             <table>
               <thead><tr><th>항목</th><th>트립닷컴 (할인코드 적용)</th><th>A사</th><th>B사</th></tr></thead>
               <tbody>
-                <tr><td>서울 5성급 호텔 (1박)</td><td className="font-bold text-primary">₩180,000 (10% OFF)</td><td>₩195,000</td><td>₩200,000</td></tr>
-                <tr><td>도쿄 3성급 호텔 (1박)</td><td className="font-bold text-primary">₩85,000 (10% OFF)</td><td>₩92,000</td><td>₩95,000</td></tr>
-                <tr><td>방콕 4성급 호텔 (1박)</td><td className="font-bold text-primary">₩54,000 (10% OFF)</td><td>₩62,000</td><td>₩58,000</td></tr>
+                <tr><td>서울 5성급 호텔 (1박)</td><td className="font-bold text-primary">₩194,000 (3% OFF)</td><td>₩195,000</td><td>₩200,000</td></tr>
+                <tr><td>도쿄 3성급 호텔 (1박)</td><td className="font-bold text-primary">₩92,000 (3% OFF)</td><td>₩92,000</td><td>₩95,000</td></tr>
+                <tr><td>방콕 4성급 호텔 (1박)</td><td className="font-bold text-primary">₩58,000 (3% OFF)</td><td>₩62,000</td><td>₩58,000</td></tr>
                 <tr><td>무료 취소 정책</td><td className="text-success font-bold">✅ 대부분 무료 취소</td><td>✅</td><td>⚠️ 일부 제한</td></tr>
                 <tr><td>할인코드 사용</td><td className="text-success font-bold">✅ 다양한 코드 제공</td><td>❌ 제한적</td><td>⚠️ 일부</td></tr>
                 <tr><td>카드사 추가 할인</td><td className="text-success font-bold">✅ 최대 2% 추가</td><td>❌</td><td>❌</td></tr>
@@ -205,10 +202,10 @@ export default function HotelDiscount() {
               <table>
                 <thead><tr><th>적용 할인</th><th>절약 금액</th></tr></thead>
                 <tbody>
-                  <tr><td>인플루언서 코드 (10%)</td><td>-20,000원</td></tr>
+                  <tr><td>TRIPBH3 코드 (3%)</td><td>-6,000원</td></tr>
                   <tr><td>롯데카드 (2%)</td><td>-4,000원</td></tr>
                   <tr><td>네이버페이 적립 (0.5%)</td><td>+1,000원 적립</td></tr>
-                  <tr><td className="font-bold text-foreground">총 절약</td><td className="font-bold text-primary text-lg">25,000원</td></tr>
+                  <tr><td className="font-bold text-foreground">총 절약</td><td className="font-bold text-primary text-lg">11,000원</td></tr>
                 </tbody>
               </table>
             </div>
@@ -224,9 +221,9 @@ export default function HotelDiscount() {
             <div className="info-card">
               <h3 className="font-bold text-foreground text-lg mb-3">📌 호텔 할인코드 최대 활용법</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• 인플루언서 할인코드는 <strong className="text-foreground">반드시 제휴 링크</strong>를 통해 접속해야 사용 가능합니다.</li>
+                <li>• 할인코드는 <strong className="text-foreground">반드시 제휴 링크</strong>를 통해 접속해야 사용 가능합니다.</li>
                 <li>• 할인코드와 카드사 할인은 <strong className="text-foreground">중복 적용이 가능</strong>합니다.</li>
-                <li>• 신규회원이라면 <strong className="text-foreground">추천코드(1JOEKI) + 웰컴쿠폰팩</strong>을 모두 활용하세요.</li>
+                <li>• 신규회원이라면 <strong className="text-foreground">추천코드(HMNG5D) + 웰컴쿠폰팩</strong>을 모두 활용하세요.</li>
                 <li>• 연박 예약 시 <strong className="text-foreground">연박 할인쿠폰</strong>이 추가로 적용됩니다.</li>
                 <li>• "첫예약 특가" 태그가 붙은 호텔은 <strong className="text-foreground">최대 20% 추가 할인</strong>이 적용됩니다.</li>
               </ul>

@@ -6,10 +6,6 @@ import SchemaOrg from "@/components/SchemaOrg";
 import CouponCard from "@/components/CouponCard";
 
 import couponFlight from "@/assets/coupon-flight-3pct.png";
-import couponThailand from "@/assets/coupon-flight-thailand.png";
-import couponChina from "@/assets/coupon-flight-china.png";
-import couponHongkong from "@/assets/coupon-flight-hongkong.png";
-import couponMacau from "@/assets/coupon-flight-macau.png";
 import couponSamsung from "@/assets/coupon-samsung.png";
 import couponMegasale from "@/assets/coupon-megasale.png";
 import couponJapan from "@/assets/coupon-japan.png";
@@ -40,32 +36,14 @@ const flightCoupons = [
   {
     code: "TRIPH3F", discount: "3% 할인", category: "항공권",
     description: "트립닷컴 항공권 3% 할인코드 – 전 노선 한도 없음",
-    expiry: "2026년 9월 30일", image: couponFlight,
+    expiry: "2026년 10월 31일", image: couponFlight,
     conditions: ["전 세계 모든 노선 적용", "할인 한도 없음 (가장 큰 혜택)", "KRW 결제 시 사용", "사용 횟수 제한 없음", "네이버페이 0.5% 추가 적립 가능"],
   },
   {
-    code: "GNVGXDXJQK", discount: "10% 할인", category: "항공권 (태국)",
-    description: "태국 도착 항공권 10% 할인코드",
-    expiry: "2026년 9월 30일", image: couponThailand,
-    conditions: ["태국 도착 항공권 한정", "탑승 기간: 2027년 7월 30일까지"],
-  },
-  {
-    code: "VAIPTSTTGD", discount: "₩19,380 할인", category: "항공권 (광둥)",
-    description: "광둥 도착 항공권 19,380원 할인코드",
-    expiry: "2026년 9월 30일", image: couponChina,
-    conditions: ["광둥 도착 항공권 한정", "정액 할인"],
-  },
-  {
-    code: "RHTKAGWUHE", discount: "₩19,380 할인", category: "항공권 (홍콩)",
-    description: "홍콩 도착 항공권 19,380원 할인코드",
-    expiry: "2026년 9월 30일", image: couponHongkong,
-    conditions: ["홍콩 도착 항공권 한정", "정액 할인"],
-  },
-  {
-    code: "GNXNCPVJVD", discount: "₩19,380 할인", category: "항공권 (마카오)",
-    description: "마카오 도착 항공권 19,380원 할인코드",
-    expiry: "2026년 9월 30일", image: couponMacau,
-    conditions: ["마카오 도착 항공권 한정", "정액 할인"],
+    code: "TRIPBF3", discount: "3% 할인", category: "항공권",
+    description: "트립닷컴 항공권 3% 할인코드 – 전 세계 모든 노선, 한도 최대 12,000원",
+    expiry: "2026년 10월 31일",
+    conditions: ["전 세계 모든 노선 적용", "할인 한도 최대 12,000원", "탑승 기간: 2027년 12월 31일까지", "KRW 결제 시 사용"],
   },
   {
     code: "TOSSF05", discount: "5% 할인", category: "항공권 (토스페이)",
@@ -87,8 +65,8 @@ export default function FlightDiscount() {
     <>
       <SchemaOrg
         type="Article"
-        title="트립닷컴 항공권 할인코드 2026년 9월 - 최대 10% 할인"
-        description="2026년 9월 최신 트립닷컴 항공권 할인코드 총정리. 전 노선 3% 할인부터 태국 10%, 중국·홍콩·마카오 정액 할인까지 모든 항공권 할인코드를 확인하세요."
+        title="트립닷컴 항공권 할인코드 2026년 10월 - 최대 5% 할인"
+        description="2026년 10월 최신 트립닷컴 항공권 할인코드 총정리. 전 노선 3% 할인(한도없음)부터 토스페이 5% 할인까지 모든 항공권 할인코드를 확인하세요."
         url="/flight-discount"
         breadcrumbs={[
           { name: "홈", url: "/" },
@@ -104,11 +82,11 @@ export default function FlightDiscount() {
         <div className="container relative text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Plane className="w-8 h-8" />
-            <span className="badge-discount text-sm">2026년 9월 최신</span>
+            <span className="badge-discount text-sm">2026년 10월 최신</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-black mb-4">트립닷컴 항공권 할인코드</h1>
           <p className="text-lg opacity-90 max-w-2xl mx-auto mb-6">
-            전 세계 모든 노선 3% 할인부터 태국 10%, 중국/홍콩/마카오 정액 할인까지. 지금 바로 최저가 항공권을 예약하세요.
+            전 세계 모든 노선 3% 할인(한도없음)부터 토스페이 결제 5% 할인까지. 지금 바로 최저가 항공권을 예약하세요.
           </p>
           <a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-secondary px-8 py-4 font-bold text-secondary-foreground text-lg hover:scale-105 transition-all animate-pulse-glow">
@@ -127,11 +105,8 @@ export default function FlightDiscount() {
               <tr><th>할인코드</th><th>할인혜택</th><th>적용 대상</th><th>마감</th></tr>
             </thead>
             <tbody>
-              <tr><td><CopyBtn code="TRIPH3F" /></td><td className="font-bold text-primary">3% 할인 (한도없음)</td><td>전 세계 모든 노선</td><td>26/09/30</td></tr>
-              <tr><td><CopyBtn code="GNVGXDXJQK" /></td><td className="font-bold text-primary">10% 할인</td><td>태국 도착 한정</td><td>26/09/30</td></tr>
-              <tr><td><CopyBtn code="VAIPTSTTGD" /></td><td className="font-bold text-primary">19,380원 할인</td><td>광둥 도착 한정</td><td>26/09/30</td></tr>
-              <tr><td><CopyBtn code="RHTKAGWUHE" /></td><td className="font-bold text-primary">19,380원 할인</td><td>홍콩 도착 한정</td><td>26/09/30</td></tr>
-              <tr><td><CopyBtn code="GNXNCPVJVD" /></td><td className="font-bold text-primary">19,380원 할인</td><td>마카오 도착 한정</td><td>26/09/30</td></tr>
+              <tr><td><CopyBtn code="TRIPH3F" /></td><td className="font-bold text-primary">3% 할인 (한도없음)</td><td>전 세계 모든 노선</td><td>26/10/31</td></tr>
+              <tr><td><CopyBtn code="TRIPBF3" /></td><td className="font-bold text-primary">3% 할인 (최대 12,000원)</td><td>전 세계 모든 노선</td><td>26/10/31</td></tr>
             </tbody>
           </table>
         </div>
@@ -155,25 +130,24 @@ export default function FlightDiscount() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="table-container">
             <table>
-              <thead><tr><th>항공권 가격</th><th>TRIPH3F (3%)</th><th>정액 (₩19,380)</th><th>추천 코드</th></tr></thead>
+              <thead><tr><th>항공권 가격</th><th>TRIPH3F (3%)</th><th>TRIPBF3 (최대 ₩12,000)</th><th>추천 코드</th></tr></thead>
               <tbody>
-                <tr><td>200,000원</td><td>6,000원 할인</td><td>19,380원 할인</td><td className="font-bold text-primary">정액 코드</td></tr>
-                <tr><td>500,000원</td><td>15,000원 할인</td><td>19,380원 할인</td><td className="font-bold text-primary">정액 코드</td></tr>
-                <tr><td>646,000원</td><td>19,380원 할인</td><td>19,380원 할인</td><td className="text-muted-foreground">동일</td></tr>
-                <tr><td>800,000원</td><td>24,000원 할인</td><td>19,380원 할인</td><td className="font-bold text-primary">TRIPH3F</td></tr>
-                <tr><td>1,000,000원</td><td>30,000원 할인</td><td>19,380원 할인</td><td className="font-bold text-primary">TRIPH3F</td></tr>
-                <tr><td>1,500,000원</td><td>45,000원 할인</td><td>19,380원 할인</td><td className="font-bold text-primary">TRIPH3F</td></tr>
+                <tr><td>200,000원</td><td>6,000원 할인</td><td>6,000원 할인</td><td className="text-muted-foreground">동일</td></tr>
+                <tr><td>400,000원</td><td>12,000원 할인</td><td>12,000원 할인</td><td className="text-muted-foreground">동일</td></tr>
+                <tr><td>500,000원</td><td>15,000원 할인</td><td>12,000원 할인</td><td className="font-bold text-primary">TRIPH3F</td></tr>
+                <tr><td>800,000원</td><td>24,000원 할인</td><td>12,000원 할인</td><td className="font-bold text-primary">TRIPH3F</td></tr>
+                <tr><td>1,000,000원</td><td>30,000원 할인</td><td>12,000원 할인</td><td className="font-bold text-primary">TRIPH3F</td></tr>
+                <tr><td>1,500,000원</td><td>45,000원 할인</td><td>12,000원 할인</td><td className="font-bold text-primary">TRIPH3F</td></tr>
               </tbody>
             </table>
           </div>
           <div className="info-card">
             <h3 className="font-bold text-lg text-foreground mb-3">💡 항공권 할인코드 선택 팁</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2"><span className="text-primary font-bold">1.</span> <span>항공권 가격이 <strong className="text-foreground">646,000원 이하</strong>라면 정액 할인코드(19,380원)가 유리합니다.</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary font-bold">2.</span> <span>항공권 가격이 <strong className="text-foreground">646,000원 이상</strong>이라면 TRIPH3F(3%)가 유리합니다.</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary font-bold">3.</span> <span>태국 도착 항공권이라면 <strong className="text-foreground">GNVGXDXJQK(10%)</strong>가 항상 가장 유리합니다.</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary font-bold">4.</span> <span>삼성카드로 결제 시 추가 2% 자동 할인을 받을 수 있어 <strong className="text-foreground">최대 5% 할인</strong>이 가능합니다.</span></li>
-              <li className="flex items-start gap-2"><span className="text-primary font-bold">5.</span> <span>네이버페이로 결제하면 <strong className="text-foreground">0.5% 추가 적립</strong>도 가능합니다.</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary font-bold">1.</span> <span>항공권 가격이 <strong className="text-foreground">400,000원 이하</strong>라면 TRIPH3F와 TRIPBF3의 할인 금액이 동일합니다.</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary font-bold">2.</span> <span>항공권 가격이 <strong className="text-foreground">400,000원 초과</strong>라면 할인 한도가 없는 TRIPH3F가 더 유리합니다.</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary font-bold">3.</span> <span>삼성카드로 결제 시 추가 2% 자동 할인을 받을 수 있어 <strong className="text-foreground">최대 5% 할인</strong>이 가능합니다.</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary font-bold">4.</span> <span>네이버페이로 결제하면 <strong className="text-foreground">0.5% 추가 적립</strong>도 가능합니다.</span></li>
             </ul>
           </div>
         </div>
@@ -190,10 +164,10 @@ export default function FlightDiscount() {
               <tbody>
                 <tr><td>인천 → 도쿄</td><td>350,000원</td><td>10,500원</td><td>-</td><td className="font-bold text-primary">10,500원</td></tr>
                 <tr><td>인천 → 오사카</td><td>280,000원</td><td>8,400원</td><td>-</td><td className="font-bold text-primary">8,400원</td></tr>
-                <tr><td>인천 → 방콕</td><td>450,000원</td><td>13,500원</td><td className="font-bold text-secondary">45,000원 (10%)</td><td className="font-bold text-primary">45,000원</td></tr>
-                <tr><td>인천 → 홍콩</td><td>320,000원</td><td>9,600원</td><td className="font-bold text-secondary">19,380원</td><td className="font-bold text-primary">19,380원</td></tr>
-                <tr><td>인천 → 광저우</td><td>250,000원</td><td>7,500원</td><td className="font-bold text-secondary">19,380원</td><td className="font-bold text-primary">19,380원</td></tr>
-                <tr><td>인천 → 마카오</td><td>300,000원</td><td>9,000원</td><td className="font-bold text-secondary">19,380원</td><td className="font-bold text-primary">19,380원</td></tr>
+                <tr><td>인천 → 방콕</td><td>450,000원</td><td className="font-bold text-secondary">13,500원</td><td>-</td><td className="font-bold text-primary">13,500원</td></tr>
+                <tr><td>인천 → 홍콩</td><td>320,000원</td><td className="font-bold text-secondary">9,600원</td><td>-</td><td className="font-bold text-primary">9,600원</td></tr>
+                <tr><td>인천 → 광저우</td><td>250,000원</td><td className="font-bold text-secondary">7,500원</td><td>-</td><td className="font-bold text-primary">7,500원</td></tr>
+                <tr><td>인천 → 마카오</td><td>300,000원</td><td className="font-bold text-secondary">9,000원</td><td>-</td><td className="font-bold text-primary">9,000원</td></tr>
                 <tr><td>인천 → 파리</td><td>1,200,000원</td><td className="font-bold text-secondary">36,000원</td><td>-</td><td className="font-bold text-primary">36,000원</td></tr>
                 <tr><td>인천 → LA</td><td>1,500,000원</td><td className="font-bold text-secondary">45,000원</td><td>-</td><td className="font-bold text-primary">45,000원</td></tr>
               </tbody>
@@ -254,7 +228,7 @@ export default function FlightDiscount() {
               <img src={couponNewmember} alt="트립닷컴 신규회원 항공권 쿠폰" className="w-full h-48 object-cover" loading="lazy" />
               <div className="p-4">
                 <h3 className="font-bold text-foreground">신규회원 항공권 쿠폰</h3>
-                <p className="text-sm text-muted-foreground">최대 24,000원 항공권 할인 쿠폰</p>
+                <p className="text-sm text-muted-foreground">최대 22,000원 항공권 할인 쿠폰</p>
               </div>
             </a>
           </div>
@@ -273,9 +247,9 @@ export default function FlightDiscount() {
           </div>
           <div className="info-card">
             <h3 className="font-bold text-foreground text-lg mb-3">📌 지역별 전용 할인코드 활용법</h3>
-            <p className="mb-3">태국, 중국(광둥), 홍콩, 마카오 등 특정 지역으로 여행을 계획하고 있다면 해당 지역 전용 할인코드를 사용하는 것이 더 유리할 수 있습니다.</p>
-            <p className="mb-3">특히 태국 도착 항공권의 경우 GNVGXDXJQK 코드를 사용하면 10% 할인을 받을 수 있어, 50만원 항공권 기준 5만원을 절약할 수 있습니다. 이는 TRIPH3F(3%)보다 훨씬 큰 할인율입니다.</p>
-            <p>광둥, 홍콩, 마카오 도착 항공권은 정액 19,380원 할인이 적용되므로, 항공권 가격이 646,000원 미만이라면 정액 할인코드가, 그 이상이라면 TRIPH3F가 유리합니다.</p>
+            <p className="mb-3">현재 트립닷컴에서는 태국, 중국(광둥), 홍콩, 마카오 등 특정 지역 전용 항공권 할인코드가 운영되지 않습니다. 대신 전 세계 모든 노선에 적용되는 일반 할인코드를 사용하는 것이 가장 유리합니다.</p>
+            <p className="mb-3">TRIPH3F는 할인 한도가 없어 고가 항공권에서도 3% 할인을 온전히 받을 수 있으며, TRIPBF3는 최대 12,000원 한도의 3% 할인코드로 TRIPH3F를 사용할 수 없는 경우의 대안으로 활용할 수 있습니다.</p>
+            <p>항공권 가격이 400,000원을 넘으면 할인 한도가 없는 TRIPH3F가 TRIPBF3보다 더 큰 할인을 제공합니다.</p>
           </div>
           <div className="info-card">
             <h3 className="font-bold text-foreground text-lg mb-3">📌 항공권 예약 최적 타이밍</h3>

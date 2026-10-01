@@ -27,25 +27,25 @@ const mainCoupons = [
     discount: "3% 할인",
     category: "항공권",
     description: "트립닷컴 항공권 3% 할인코드 (한도 없음)",
-    expiry: "2026년 9월 30일",
+    expiry: "2026년 10월 31일",
     image: couponFlight,
     conditions: ["KRW 결제 시 사용 가능", "사용 횟수 제한 없음", "네이버페이 결제 시 0.5% 추가 적립"],
   },
   {
-    code: "VSZZETGULJ",
-    discount: "10% 할인",
+    code: "TRIPBH3",
+    discount: "3% 할인",
     category: "호텔",
-    description: "태국 호텔 10% 할인 인플루언서 코드",
-    expiry: "2026년 9월 30일",
+    description: "전 세계 호텔 3% 할인코드 (한도없음)",
+    expiry: "2026년 10월 31일",
     image: couponHotel,
-    conditions: ["태국 호텔 한정", "투숙 기간: 2026년 9월 30일까지"],
+    conditions: ["전 세계 모든 호텔 적용", "계정당 10회까지 사용 가능", "KRW 결제 시 사용"],
   },
   {
     code: "TRIPCAR8",
     discount: "8% 할인",
     category: "렌터카",
     description: "트립닷컴 렌터카 8% 할인코드",
-    expiry: "2026년 9월 30일",
+    expiry: "2026년 10월 31일",
     image: couponCar,
     conditions: ["전 세계 렌터카 적용 가능"],
   },
@@ -83,7 +83,7 @@ export default function Index() {
       <SchemaOrg
         type="WebSite"
         title="트립닷컴 쿠폰"
-        description="9월 트립닷컴 쿠폰 총정리! 트립닷컴 항공권 할인코드부터 호텔 할인코드까지, 지금 바로 쓸 수 있는 트립닷컴 할인쿠폰을 카테고리별로 정리했습니다. 매월 업데이트되는 트립닷컴 할인코드들을 확인해보세요!"
+        description="10월 트립닷컴 쿠폰 총정리! 트립닷컴 항공권 할인코드부터 호텔 할인코드까지, 지금 바로 쓸 수 있는 트립닷컴 할인쿠폰을 카테고리별로 정리했습니다. 매월 업데이트되는 트립닷컴 할인코드들을 확인해보세요!"
         url="/"
         breadcrumbs={[{ name: "홈", url: "/" }]}
         pageDates={pageDates}
@@ -95,7 +95,7 @@ export default function Index() {
           <img src={heroBanner} alt="트립닷컴 할인코드 2026 배너" className="w-full h-full object-cover" />
         </div>
         <div className="container relative py-16 md:py-24 text-center">
-          <span className="badge-discount mb-4 inline-block text-sm">2026년 9월 업데이트</span>
+          <span className="badge-discount mb-4 inline-block text-sm">2026년 10월 업데이트</span>
           <h1 className="text-3xl md:text-5xl font-black mb-4 leading-tight">
             트립닷컴 할인코드
             <br />
@@ -119,7 +119,7 @@ export default function Index() {
 
       {/* Quick Summary Table */}
       <section className="container py-12 animate-fade-in">
-        <h2 className="section-title text-center">📋 2026년 9월 트립닷컴 할인코드 요약</h2>
+        <h2 className="section-title text-center">📋 2026년 10월 트립닷컴 할인코드 요약</h2>
         <p className="section-subtitle text-center">현재 사용 가능한 모든 할인코드를 한눈에 확인하세요</p>
 
         <div className="table-container">
@@ -134,17 +134,13 @@ export default function Index() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>항공권</td><td><CopyCodeButton code="TRIPH3F" /></td><td className="font-bold text-primary">3% (한도없음)</td><td>26/09/30</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
-              <tr><td>항공권 (태국)</td><td><CopyCodeButton code="GNVGXDXJQK" /></td><td className="font-bold text-primary">10%</td><td>26/09/30</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
-              <tr><td>항공권 (광둥)</td><td><CopyCodeButton code="VAIPTSTTGD" /></td><td className="font-bold text-primary">19,380원</td><td>26/09/30</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
-              <tr><td>항공권 (홍콩)</td><td><CopyCodeButton code="RHTKAGWUHE" /></td><td className="font-bold text-primary">19,380원</td><td>26/09/30</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
-              <tr><td>항공권 (마카오)</td><td><CopyCodeButton code="GNXNCPVJVD" /></td><td className="font-bold text-primary">19,380원</td><td>26/09/30</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
-              <tr><td>호텔 (태국)</td><td><CopyCodeButton code="VSZZETGULJ" /></td><td className="font-bold text-primary">10%</td><td>26/09/30</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
-              <tr><td>렌터카</td><td><CopyCodeButton code="TRIPCAR8" /></td><td className="font-bold text-primary">8%</td><td>26/09/30</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
-              <tr><td>렌터카</td><td><CopyCodeButton code="TRIPCAR7" /></td><td className="font-bold text-primary">7%</td><td>26/09/30</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
-              <tr><td>액티비티</td><td><CopyCodeButton code="TRIPBHANT10" /></td><td className="font-bold text-primary">10%</td><td>26/03/08</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
+              <tr><td>항공권</td><td><CopyCodeButton code="TRIPH3F" /></td><td className="font-bold text-primary">3% (한도없음)</td><td>26/10/31</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
+              <tr><td>항공권</td><td><CopyCodeButton code="TRIPBF3" /></td><td className="font-bold text-primary">3% (최대 12,000원)</td><td>26/10/31</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
+              <tr><td>호텔</td><td><CopyCodeButton code="TRIPBH3" /></td><td className="font-bold text-primary">3% (한도없음)</td><td>26/10/31</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
+              <tr><td>렌터카</td><td><CopyCodeButton code="TRIPCAR8" /></td><td className="font-bold text-primary">8%</td><td>26/10/31</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
+              <tr><td>렌터카</td><td><CopyCodeButton code="TRIPCAR7" /></td><td className="font-bold text-primary">7%</td><td>26/10/31</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
               <tr><td>액티비티</td><td><CopyCodeButton code="GO5" /></td><td className="font-bold text-primary">5%</td><td>26/12/31</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
-              <tr><td>신규회원</td><td><CopyCodeButton code="1JOEKI" /></td><td className="font-bold text-primary">호텔 8% + 웰컴팩</td><td>가입 후 7일</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
+              <tr><td>신규회원</td><td><CopyCodeButton code="HMNG5D" /></td><td className="font-bold text-primary">호텔 8% + 웰컴팩</td><td>가입 후 7일</td><td><a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">적용 →</a></td></tr>
             </tbody>
           </table>
         </div>
@@ -209,10 +205,10 @@ export default function Index() {
                   <tr><th>카테고리</th><th>최소 할인</th><th>최대 할인</th><th>추천 대상</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>항공권</td><td>3%</td><td className="font-bold text-primary">10%</td><td>모든 여행자</td></tr>
-                  <tr><td>호텔</td><td>5%</td><td className="font-bold text-primary">12%</td><td>숙박 예약자</td></tr>
+                  <tr><td>항공권</td><td>3%</td><td className="font-bold text-primary">3%</td><td>모든 여행자</td></tr>
+                  <tr><td>호텔</td><td>3%</td><td className="font-bold text-primary">8%</td><td>숙박 예약자</td></tr>
                   <tr><td>렌터카</td><td>7%</td><td className="font-bold text-primary">8%</td><td>자유 여행자</td></tr>
-                  <tr><td>액티비티</td><td>5%</td><td className="font-bold text-primary">10%</td><td>체험 여행자</td></tr>
+                  <tr><td>액티비티</td><td>5%</td><td className="font-bold text-primary">12%</td><td>체험 여행자</td></tr>
                   <tr><td>신규회원</td><td>5%</td><td className="font-bold text-primary">15%</td><td>첫 이용자</td></tr>
                 </tbody>
               </table>
@@ -256,7 +252,7 @@ export default function Index() {
             </div>
             <div>
               <h3 className="font-bold text-foreground">항공권 할인코드</h3>
-              <p className="text-sm text-muted-foreground">전 노선 3%~10% 할인 코드</p>
+              <p className="text-sm text-muted-foreground">전 노선 3% 할인 코드</p>
             </div>
             <ArrowRight className="w-5 h-5 text-muted-foreground ml-auto" />
           </Link>
@@ -266,7 +262,7 @@ export default function Index() {
             </div>
             <div>
               <h3 className="font-bold text-foreground">호텔 할인코드</h3>
-              <p className="text-sm text-muted-foreground">호텔 5%~12% 할인 코드</p>
+              <p className="text-sm text-muted-foreground">호텔 3%~8% 할인 코드</p>
             </div>
             <ArrowRight className="w-5 h-5 text-muted-foreground ml-auto" />
           </Link>
@@ -294,7 +290,7 @@ export default function Index() {
             트립닷컴 할인코드는 크게 4가지 유형으로 분류됩니다: <strong className="text-foreground">회원 전용 할인코드</strong>, <strong className="text-foreground">시즌 프로모션 코드</strong>, <strong className="text-foreground">파트너 제휴 코드</strong>, <strong className="text-foreground">앱 전용 프로모션 코드</strong>. 각 유형마다 적용 조건과 할인율이 다르므로, 본 사이트에서 최신 정보를 확인한 후 가장 유리한 코드를 선택하여 사용하시기 바랍니다.
           </p>
           <p>
-            2026년 9월 현재, 트립닷컴에서는 메가세일, 슈퍼 데스티네이션 일본, GO 차이나, GO 태국 등 다양한 프로모션을 동시에 진행하고 있습니다. 또한 삼성카드, 롯데카드 등 카드사 제휴 할인을 함께 적용하면 더욱 큰 할인 혜택을 누릴 수 있습니다.
+            2026년 10월 현재, 트립닷컴에서는 메가세일, 슈퍼 데스티네이션 일본, GO 차이나, GO 태국 등 다양한 프로모션을 동시에 진행하고 있습니다. 또한 삼성카드, 롯데카드 등 카드사 제휴 할인을 함께 적용하면 더욱 큰 할인 혜택을 누릴 수 있습니다.
           </p>
           <p>
             본 사이트 <strong className="text-foreground">트립닷컴 할인코드</strong>에서는 매월 최신 할인코드를 업데이트하고, 카테고리별 비교 분석, 사용 방법 가이드, 카드사 제휴 정보 등을 종합적으로 제공하여 여행자 여러분이 가장 합리적인 가격으로 여행을 즐길 수 있도록 돕고 있습니다. <a href="https://travista.co.kr/trip-deals-promo-code/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">트립닷컴 할인코드</a> 관련 추가 정보도 함께 참고해 보세요.

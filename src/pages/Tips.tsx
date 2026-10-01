@@ -53,7 +53,7 @@ const faqItems = [
   { question: "할인코드를 여러 개 동시에 사용할 수 있나요?", answer: "트립닷컴에서는 한 번의 결제에 하나의 할인코드만 적용 가능합니다. 다만, 카드사 제휴 할인(삼성카드 2%, 롯데카드 2%)은 할인코드와 별도로 자동 적용되므로 중복 할인이 가능합니다. 네이버페이 적립도 별도로 적용됩니다." },
   { question: "할인코드가 적용되지 않는 이유는 무엇인가요?", answer: "할인코드가 적용되지 않는 주요 원인은 다음과 같습니다: 1) 유효기간 만료, 2) 대소문자 오타 또는 띄어쓰기 오류, 3) 적용 대상 상품이 아닌 경우(예: 항공권 코드를 호텔에 사용), 4) 최소 결제 금액 미달, 5) 신규/기존 회원 구분, 6) 제휴 링크를 통해 접속하지 않은 경우." },
   { question: "인플루언서 할인코드란 무엇인가요?", answer: "인플루언서 할인코드는 트립닷컴이 선정한 공식 파트너(인플루언서)에게 제공하는 전용 할인코드입니다. 일반 프로모션 코드보다 높은 할인율을 제공하며, 반드시 해당 인플루언서의 제휴 링크를 통해 접속해야만 사용할 수 있습니다. 본 사이트의 버튼을 통해 접속하면 자동으로 제휴 링크가 적용됩니다." },
-  { question: "신규회원 웰컴 쿠폰팩은 어떻게 받나요?", answer: "트립닷컴 앱을 설치하고 회원가입을 완료하면 자동으로 웰컴 쿠폰팩이 지급됩니다. 가입 시 추천코드(1JOEKI)를 입력하면 호텔 8% 할인쿠폰이 추가로 지급됩니다. 웰컴 쿠폰팩은 가입 후 7일 이내에만 사용 가능하니 빨리 사용하세요." },
+  { question: "신규회원 웰컴 쿠폰팩은 어떻게 받나요?", answer: "트립닷컴 앱을 설치하고 회원가입을 완료하면 자동으로 웰컴 쿠폰팩이 지급됩니다. 가입 시 추천코드(HMNG5D)를 입력하면 호텔 8% 할인쿠폰이 추가로 지급됩니다. 웰컴 쿠폰팩은 가입 후 7일 이내에만 사용 가능하니 빨리 사용하세요." },
   { question: "트립닷컴 할인코드는 PC와 모바일 앱 모두 사용 가능한가요?", answer: "대부분의 할인코드는 PC 웹과 모바일 앱 모두에서 사용 가능합니다. 다만, 일부 앱 전용 프로모션 코드는 모바일 앱에서만 입력할 수 있으므로 주의가 필요합니다. 앱 전용 코드의 경우 PC 웹에서는 입력란이 표시되지 않을 수 있습니다." },
   { question: "카드사 할인은 어떻게 적용되나요?", answer: "삼성카드(항공권 2%)와 롯데카드(호텔 2%) 할인은 해당 카드로 결제 시 자동으로 적용됩니다. 별도의 코드 입력이 필요 없으며, 할인코드와 중복 적용이 가능합니다. 다만, 월별 선착순으로 제공되므로 조기 소진될 수 있습니다." },
   { question: "네이버페이로 결제하면 어떤 혜택이 있나요?", answer: "트립닷컴에서 네이버페이로 결제하면 결제 금액의 0.5%가 네이버페이 포인트로 적립됩니다. 이는 할인코드, 카드사 할인과 별도로 적용되므로, 할인코드 + 카드사 할인 + 네이버페이 적립을 모두 활용하면 최대 혜택을 누릴 수 있습니다." },
@@ -202,10 +202,9 @@ export default function Tips() {
             <table>
               <thead><tr><th>할인코드 종류</th><th>할인 혜택</th><th>특징</th></tr></thead>
               <tbody>
-                <tr><td>항공권 할인코드</td><td className="font-bold text-primary">3~10%</td><td>제휴사 코드가 가장 높은 할인율</td></tr>
-                <tr><td>호텔 할인코드</td><td className="font-bold text-primary">5~12%</td><td>조건없이 무제한 할인 가능</td></tr>
-                <tr><td>액티비티 할인코드</td><td className="font-bold text-primary">5~10%</td><td>신규회원 할인율이 가장 큼</td></tr>
-                <tr><td>나라별 할인코드</td><td className="font-bold text-primary">최대 19,380원</td><td>이벤트성으로 발생, 할인폭 최대</td></tr>
+                <tr><td>항공권 할인코드</td><td className="font-bold text-primary">3%</td><td>제휴사 코드가 가장 높은 할인율</td></tr>
+                <tr><td>호텔 할인코드</td><td className="font-bold text-primary">3~8%</td><td>조건없이 무제한 할인 가능</td></tr>
+                <tr><td>액티비티 할인코드</td><td className="font-bold text-primary">5~12%</td><td>신규회원 할인율이 가장 큼</td></tr>
               </tbody>
             </table>
           </div>
@@ -261,10 +260,10 @@ export default function Tips() {
               <table>
                 <thead><tr><th>할인 항목</th><th>할인율/금액</th><th>적용 방법</th></tr></thead>
                 <tbody>
-                  <tr><td>인플루언서 코드</td><td className="font-bold text-primary">10%</td><td>제휴 링크 접속 후 코드 입력</td></tr>
+                  <tr><td>인플루언서 코드</td><td className="font-bold text-primary">3%</td><td>제휴 링크 접속 후 코드 입력</td></tr>
                   <tr><td>롯데카드</td><td className="font-bold text-primary">2%</td><td>롯데카드로 결제 (자동)</td></tr>
                   <tr><td>네이버페이</td><td className="font-bold text-primary">0.5% 적립</td><td>네이버페이로 결제</td></tr>
-                  <tr><td className="font-bold text-foreground">총 할인</td><td className="font-bold text-primary text-lg">최대 12.5%</td><td></td></tr>
+                  <tr><td className="font-bold text-foreground">총 할인</td><td className="font-bold text-primary text-lg">최대 5.5%</td><td></td></tr>
                 </tbody>
               </table>
             </div>
@@ -286,7 +285,7 @@ export default function Tips() {
                 <tr><td>4월</td><td>메가세일 + 슈퍼 데스티네이션</td><td>항공 10만원↓, 호텔 10만원↓</td><td>일본, 태국, 중국</td></tr>
                 <tr><td>4~7월</td><td>봄 여행 시즌</td><td>벚꽃 여행 특가</td><td>일본, 대만</td></tr>
                 <tr><td>6~8월</td><td>여름 휴가 프로모션</td><td>리조트·해변 호텔 특가</td><td>동남아, 하와이</td></tr>
-                <tr><td className="font-bold text-primary">9~10월 (현재)</td><td className="font-bold text-primary">가을 여행 특가</td><td className="font-bold text-primary">유럽·미주 항공권 할인</td><td className="font-bold text-primary">유럽, 미국</td></tr>
+                <tr><td className="font-bold text-primary">10~11월 (현재)</td><td className="font-bold text-primary">가을 여행 특가</td><td className="font-bold text-primary">유럽·미주 항공권 할인</td><td className="font-bold text-primary">유럽, 미국</td></tr>
                 <tr><td>11월</td><td>블랙프라이데이</td><td>연중 최대 할인 (최대 50%)</td><td>전 세계</td></tr>
                 <tr><td>12월</td><td>연말 특가</td><td>겨울 여행·스키 패키지</td><td>일본, 유럽</td></tr>
               </tbody>
@@ -314,13 +313,13 @@ export default function Tips() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
               { code: "TRIPH3F", label: "항공권 3%" },
-              { code: "GNVGXDXJQK", label: "태국 항공 10%" },
-              { code: "VSZZETGULJ", label: "태국 호텔 10%" },
+              { code: "TRIPBF3", label: "항공권 3% (한도)" },
+              { code: "TRIPBH3", label: "호텔 3%" },
               { code: "TRIPCAR8", label: "렌터카 8%" },
               { code: "GO5", label: "액티비티 5%" },
-              { code: "TRIPBHANT10", label: "액티비티 10%" },
+              { code: "RVZBEEWRDF", label: "중국 호텔 5%" },
               { code: "TRIPCAR7", label: "렌터카 7%" },
-              { code: "1JOEKI", label: "신규회원" },
+              { code: "HMNG5D", label: "신규회원" },
             ].map((item) => (
               <div key={item.code} className="info-card text-center p-4">
                 <p className="text-xs text-muted-foreground mb-2">{item.label}</p>
