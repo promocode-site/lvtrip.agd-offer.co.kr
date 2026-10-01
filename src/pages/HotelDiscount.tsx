@@ -37,12 +37,6 @@ function CopyBtn({ code }: { code: string }) {
 
 const hotelCoupons = [
   {
-    code: "TRIPBH3", discount: "3% 할인", category: "호텔",
-    description: "전 세계 호텔 3% 할인코드 (한도없음)",
-    expiry: "2026년 10월 31일",
-    conditions: ["전 세계 모든 호텔 적용", "투숙 기간: 2026년 10월 31일까지", "할인 한도 없음, 계정당 10회까지 사용 가능", "KRW 결제 시 사용"],
-  },
-  {
     code: "HMNG5D", discount: "8% 쿠폰", category: "신규회원",
     description: "신규회원 추천코드 – 호텔 8% 할인쿠폰 지급",
     expiry: "가입 후 7일", image: couponNewmember,
@@ -59,6 +53,12 @@ const hotelCoupons = [
     description: "트립닷컴 렌터카 7% 할인코드",
     expiry: "2026년 10월 31일", image: couponCar7,
     conditions: ["전 세계 렌터카 적용", "TRIPCAR8 미적용 시 사용"],
+  },
+  {
+    code: "TRIPBH3", discount: "3% 할인", category: "호텔",
+    description: "전 세계 호텔 3% 할인코드 (한도없음)",
+    expiry: "2026년 10월 31일",
+    conditions: ["전 세계 모든 호텔 적용", "투숙 기간: 2026년 10월 31일까지", "할인 한도 없음, 계정당 10회까지 사용 가능", "KRW 결제 시 사용"],
   },
   {
     code: "RVZBEEWRDF", discount: "5% 할인", category: "호텔 (토스페이)",
