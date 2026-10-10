@@ -4,6 +4,36 @@ import { useState } from "react";
 
 const AFFILIATE_LINK = "https://app.ac/Iqp4O9293";
 
+// 푸터에만 들어가는 페이지 (public/ 아래 정적 페이지라 Link 가 아니라 일반 a 로 연다)
+const footerGroups = [
+  {
+    title: "카드사별 할인",
+    links: [
+      ["/shinhan-card/", "신한카드"],
+      ["/samsung-card/", "삼성카드"],
+      ["/nh-card/", "NH농협카드"],
+      ["/master-card/", "마스터카드"],
+      ["/visa-card/", "비자카드"],
+      ["/kb-card/", "KB국민카드"],
+      ["/woori-card/", "우리카드"],
+      ["/bc-card/", "BC카드"],
+      ["/unionpay-card/", "유니온페이"],
+      ["/kakao-pay/", "카카오페이"],
+      ["/toss-pay/", "토스페이"],
+    ],
+  },
+  {
+    title: "다른 할인코드",
+    links: [
+      ["/agoda/", "아고다 할인코드"],
+      ["/myrealtrip/", "마이리얼트립 할인코드"],
+      ["/hotelscom/", "호텔스닷컴 할인코드"],
+      ["/klook/", "클룩 할인코드"],
+      ["/kkday/", "kkday 할인코드"],
+    ],
+  },
+];
+
 const navItems = [
   { path: "/", label: "메인", icon: Ticket },
   { path: "/flight-discount", label: "항공권 할인코드", icon: Plane },
@@ -111,6 +141,22 @@ export default function Layout() {
                 트립닷컴에서 할인 받기 →
               </a>
             </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-primary-foreground/20 mt-8 pt-8">
+            {footerGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="text-lg font-bold mb-4 text-primary-foreground">{group.title}</h3>
+                <ul className="flex flex-wrap gap-x-4 gap-y-2">
+                  {group.links.map(([href, label]) => (
+                    <li key={href}>
+                      <a href={href} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm text-primary-foreground/50">
             <p>© 2026 트립닷컴 쿠폰. All rights reserved. | 트립닷컴 공식 제휴 파트너</p>
