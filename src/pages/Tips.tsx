@@ -21,17 +21,17 @@ const AFFILIATE_LINK = "http://app.ac/Iqp4O9293";
 function CopyBtn({ code }: { code: string }) {
   const [copied, setCopied] = useState(false);
   const handle = () => {
-    navigator.clipboard.writeText(code);
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(code).catch(() => {});
     setCopied(true);
     toast.success(`"${code}" 복사 완료!`);
     setTimeout(() => setCopied(false), 2000);
-    window.open(AFFILIATE_LINK, "_blank", "noopener,noreferrer");
   };
   return (
-    <button onClick={handle} className="copy-button">
+    <a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" onClick={handle} className="copy-button">
       {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
       <code className="tracking-wider">{code}</code>
-    </button>
+    </a>
   );
 }
 

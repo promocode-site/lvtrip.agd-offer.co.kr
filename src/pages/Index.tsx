@@ -63,17 +63,17 @@ const mainCoupons = [
 function CopyCodeButton({ code }: { code: string }) {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
-    navigator.clipboard.writeText(code);
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(code).catch(() => {});
     setCopied(true);
     toast.success(`"${code}" 복사 완료!`);
     setTimeout(() => setCopied(false), 2000);
-    window.open(AFFILIATE_LINK, "_blank", "noopener,noreferrer");
   };
   return (
-    <button onClick={handleCopy} className="copy-button" aria-label={`${code} 복사`}>
+    <a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer" onClick={handleCopy} className="copy-button" aria-label={`${code} 복사`}>
       {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
       <code className="tracking-wider">{code}</code>
-    </button>
+    </a>
   );
 }
 

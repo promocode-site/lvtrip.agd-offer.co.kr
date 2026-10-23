@@ -20,11 +20,11 @@ export default function CouponCard({ code, discount, category, description, expi
   const targetLink = link || AFFILIATE_LINK;
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(code);
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(code).catch(() => {});
     setCopied(true);
     toast.success(`할인코드 "${code}" 가 복사되었습니다!`);
     setTimeout(() => setCopied(false), 2000);
-    window.open(targetLink, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -46,14 +46,17 @@ export default function CouponCard({ code, discount, category, description, expi
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3 bg-muted rounded-lg px-2 sm:px-4 py-1.5 sm:py-2">
           <code className="text-primary font-bold text-[11px] sm:text-base flex-1 tracking-wider truncate">{code}</code>
-          <button
+          <a
+            href={targetLink}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={handleCopy}
             className={`copy-button text-[10px] sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5 justify-center ${copied ? "bg-success" : ""}`}
             aria-label={`할인코드 ${code} 복사`}
           >
             {copied ? <Check className="w-3 h-3 sm:w-4 sm:h-4" /> : <Copy className="w-3 h-3 sm:w-4 sm:h-4" />}
             {copied ? "복사됨!" : "복사"}
-          </button>
+          </a>
         </div>
 
         {conditions && conditions.length > 0 && (
